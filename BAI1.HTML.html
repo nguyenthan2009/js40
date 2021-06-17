@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body onload="LOVE()">
+<form>
+    <label>
+        <textarea cols="30" row="5" id='txt'></textarea>
+    </label>
+</form>
+
+<script>
+    let data='';
+    let array=[];
+    array[1]= "T";
+    array[2]= "0";
+    array[3]= " ";
+    array[4]= "T";
+    array[5]= "H";
+    array[6]="I";
+    array[7]= "C";
+    array[8]="H";
+    array[9]= " ";
+    array[10]="C";
+    array[11]="A";
+    array[12]= "U";
+    array[13]="!";
+
+    function LOVE() {
+        let text = document.getElementById('txt').value;
+        console.log(text)
+        let j = text.length;
+
+        for (let i = 1; i <= j; i++) {
+            data = data + array[i];
+            if (i === 13) {
+                data = "";
+            }
+        }
+
+        document.getElementById('txt').value = data;
+        data = "";
+        setTimeout("LOVE()", 1);
+    }
+</script>
+
+</body>
+</html>
